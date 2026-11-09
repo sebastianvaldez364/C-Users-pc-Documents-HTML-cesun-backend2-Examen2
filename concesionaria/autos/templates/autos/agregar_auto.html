@@ -1,0 +1,76 @@
+{% extends 'autos/base.html' %}
+
+{% block contenido %}
+
+<div class="row justify-content-center">
+
+    <div class="col-md-6">
+
+        <div class="card shadow">
+
+            <div class="card-header bg-primary text-white">
+
+                <h4 class="text-center">
+                    Registrar Automóvil
+                </h4>
+
+            </div>
+
+            <div class="card-body">
+
+                <form method="POST">
+
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+
+                        <label class="form-label">Marca</label>
+
+                        {{ form.marca }}
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">Modelo</label>
+
+                        {{ form.modelo }}
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">Año</label>
+
+                        {{ form.año }}
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">Precio</label>
+
+                        {{ form.precio }}
+
+                    </div>
+
+                    <button type="submit" class="btn btn-success w-100">
+                        Guardar Automóvil
+                    </button>
+
+                    <a href="{% url 'lista_autos' %}"
+                       class="btn btn-secondary w-100 mt-2">
+                        Regresar
+                    </a>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
